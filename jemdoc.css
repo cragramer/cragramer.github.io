@@ -20,7 +20,7 @@ body {
 #layout-menu {
     width: 140px;
     padding-right: 20px;
-    padding-top: 40px;
+    padding-top: 20px;
     position: sticky;
     top: 20px;
     align-self: flex-start;
@@ -53,7 +53,7 @@ body {
 
 #layout-content {
     flex: 1;
-    padding: 40px 20px 40px 40px;
+    padding: 20px 20px 20px 40px;
     max-width: 100%;
 }
 
@@ -103,22 +103,28 @@ body {
 .header-container {
     display: flex;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     align-items: center;
     border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 .header-photo {
     flex-shrink: 0;
-    width: 380px;
+    width: 240px;
 }
 
 .header-photo img {
     width: 100%;
-    height: auto;
-    border-radius: 4px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
     display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 .header-info {
@@ -141,9 +147,9 @@ h1 {
 
 /* Content Typography */
 p {
-    margin-bottom: 1em;
+    margin-bottom: 0.8em;
     color: #333;
-    font-size: 1.1em;
+    font-size: 1.05em;
 }
 
 a {
@@ -155,13 +161,27 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Fix underlines on icon links */
+.header-contact a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header-contact a:hover {
+    text-decoration: none;
+}
+
+.header-contact a[href^="mailto:"]:hover {
+    text-decoration: underline;
+}
+
 /* Headings */
 h2 {
     font-family: Georgia, serif;
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: bold;
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
     color: #2b2b2b;
     border-bottom: 1px solid #ddd;
     padding-bottom: 5px;
@@ -180,11 +200,13 @@ ul {
     list-style-type: disc;
     padding-left: 20px;
     margin-top: 0;
+    margin-bottom: 1em;
 }
 
 li {
-    margin-bottom: 1em;
-    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    font-size: 1.05em;
+    line-height: 1.5;
 }
 
 /* Publication Item Styling */
